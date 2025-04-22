@@ -23,3 +23,5 @@ Responsive Design
 This webpape is deployed to GitHub Pages
 
 Delopyment Link: https://anhlecongtran.github.io/se_project_spots/
+
+Video Link: https://drive.google.com/file/d/1sw5slFPGw-8QyE72g5xXH0d834d1KPo7/view?usp=sharing
