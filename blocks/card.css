@@ -11,6 +11,7 @@
 }
 
 .card__title {
+  max-width: 413px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 20px;
@@ -31,7 +32,7 @@
 }
 
 .card__like-button {
-  background-image: url(../images/likeicon.svg);
+  background-image: url(../images/loveicon.svg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 23px;
