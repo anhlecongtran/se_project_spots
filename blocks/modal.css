@@ -1,0 +1,133 @@
+.modal {
+  visibility: hidden;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal_is-opened {
+  visibility: visible;
+}
+
+.modal__container {
+  max-width: 730px;
+  max-height: 408px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 32px 50px;
+  position: relative;
+  margin: 0;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/Close\ Icon.svg);
+  background-position: center;
+  background-size: fit;
+  border: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+}
+
+.modal__close-button:hover {
+  cursor: url(../images/cursor.svg), pointer;
+  background-image: url(../images/Property\ 1=Variant2.svg);
+  background-position: center;
+  background-size: fit;
+  border: none;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0 0 32px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  letter-spacing: 0;
+  color: rgba(33, 33, 33, 0.7);
+}
+
+.modal__input {
+  display: block;
+  margin: 8px 0 0;
+  width: 100%;
+  border-radius: 8px;
+  border-style: solid;
+  height: 52px;
+}
+
+.modal__input::placeholder {
+  color: #2121214d;
+}
+
+.modal__input:hover {
+  border-color: rgba(33, 33, 33, 1);
+  cursor: url(../images/cursor.svg), pointer;
+}
+
+.modal__input:focus {
+  border-color: rgba(33, 33, 33, 0.4);
+}
+
+.modal__submit-button {
+  height: 52px;
+  color: #fff;
+  background-color: #212121;
+  border: none;
+  border-radius: 8px;
+  max-width: 156px;
+}
+
+.modal__submit-button:hover {
+  opacity: 80%;
+  cursor: url(../images/cursor.svg), pointer;
+}
+
+@media screen and (max-width: 672px) {
+  .modal__title {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+  .modal__submit-button {
+    max-width: none;
+    width: 100%;
+  }
+}
