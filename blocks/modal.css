@@ -82,6 +82,7 @@
   color: rgba(33, 33, 33, 0.7);
 }
 
+/*TODO: Fix input over modal container*/
 .modal__input {
   display: block;
   margin: 8px 0 0;
