@@ -37,7 +37,7 @@
   right: 50px;
   width: 40px;
   height: 40px;
-  background-image: url(../images/Close\ Icon.svg);
+  background-image: url(../images/Close\Icon.svg);
   background-position: center;
   background-size: fit;
   border: none;
@@ -46,10 +46,11 @@
   padding: 0;
   height: 40px;
   width: 40px;
+  opacity: 40%;
 }
 
 .modal__close-button:hover {
-  cursor: url(../images/cursor.svg), pointer;
+  cursor: pointer;
   background-image: url(../images/Property\ 1=Variant2.svg);
   background-position: center;
   background-size: fit;
@@ -57,6 +58,7 @@
   background-color: #fff;
   margin: 0;
   padding: 0;
+  opacity: 100%;
 }
 
 .modal__title {
@@ -102,7 +104,7 @@
 
 .modal__input:hover {
   border-color: rgba(33, 33, 33, 1);
-  cursor: url(../images/cursor.svg), pointer;
+  cursor: pointer;
 }
 
 .modal__input:focus {
@@ -120,16 +122,15 @@
 
 .modal__submit-button:hover {
   opacity: 80%;
-  cursor: url(../images/cursor.svg), pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 672px) {
+  .modal__container {
+    padding: 12px 12px;
+  }
   .modal__title {
-    font-family: Poppins, Arial, Helvetica, sans-serif;
-    font-weight: 500;
     font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0;
   }
   .modal__submit-button {
     max-width: none;
