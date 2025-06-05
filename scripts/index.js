@@ -37,8 +37,8 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
-  newPostImageInput.value = newPostImageEl.textContent;
-  newPostDescriptionInput.value = newPostDescriptionEl.textContent;
+  newPostImageInput.value = "";
+  newPostDescriptionInput.value = "";
   newPostModal.classList.add("modal_is-opened");
 });
 
