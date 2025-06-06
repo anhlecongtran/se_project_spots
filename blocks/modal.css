@@ -50,6 +50,7 @@
 
 .modal__close-button:hover {
   cursor: pointer;
+  opacity: 100%;
   background-image: url(../images/closeiconhover.svg);
   background-position: center;
   background-size: fit;
@@ -86,7 +87,6 @@
   color: rgba(33, 33, 33, 0.7);
 }
 
-/*TODO: Fix input over modal container*/
 .modal__input {
   display: block;
   margin: 8px 0 0;
@@ -102,6 +102,7 @@
 
 .modal__input:hover {
   border-color: rgba(33, 33, 33, 1);
+
   cursor: pointer;
 }
 
@@ -133,5 +134,9 @@
   .modal__submit-button {
     max-width: none;
     width: 100%;
+  }
+  .modal__close-button {
+    top: 12px;
+    right: 12px;
   }
 }

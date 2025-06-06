@@ -88,7 +88,7 @@
   font-size: 16px;
   line-height: 100%;
   letter-spacing: 0;
-  cursor: url(../images/cursor.svg), pointer;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
