@@ -14,6 +14,10 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
+.modal_type_preview {
+  padding: 0 16px;
+}
+
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
@@ -41,7 +45,7 @@
   background-position: center;
   background-size: fit;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   margin: 0;
   padding: 0;
   height: 40px;
@@ -49,9 +53,28 @@
   opacity: 40%;
 }
 
+.modal__close-button_type_preview {
+  top: 0;
+  right: -52.5px;
+  background-image: url(../images/closePreview.svg);
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: fit;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  opacity: 100%;
+}
+
 .modal__close-button:hover {
   cursor: pointer;
   opacity: 100%;
+}
+
+.modal__close-button_type_preview:hover {
+  opacity: 40%;
 }
 
 .modal__title {
@@ -118,7 +141,32 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 672px) {
+.modal__image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal__image {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.modal__caption {
+  margin-top: 8px;
+  color: white;
+  display: inline;
+  background-color: #212121;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+@media screen and (max-width: 480px) {
   .modal__container {
     padding: 12px 12px;
   }
@@ -132,5 +180,15 @@
   .modal__close-button {
     top: 12px;
     right: 12px;
+  }
+}
+
+@media screen and (max-width: 627px) {
+  .modal__close-button_type_preview {
+    top: -48px;
+    right: 0;
+  }
+  .modal__image {
+    max-width: unset;
   }
 }
