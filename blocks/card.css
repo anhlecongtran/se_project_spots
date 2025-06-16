@@ -32,6 +32,10 @@
   border-radius: 8px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__delete-button {
   background-image: url(../images/trash.svg);
   background-size: cover;
@@ -47,6 +51,7 @@
 
 .card__delete-button:hover {
   background-image: url(../images/trashHover.svg);
+  cursor: pointer;
 }
 
 .card__like-button {
