@@ -78,6 +78,7 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  // resetValidation(formElement, inputElement, input);
   openModal(editProfileModal);
 });
 
@@ -86,6 +87,7 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
+  // resetValidation();
   openModal(newPostModal);
 });
 
