@@ -84,11 +84,15 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
-  document.removeEventListenerEventListener("keydown", handleEscapeKey);
+  document.removeEventListener("keydown", handleEscapeKey);
   modal.removeEventListener("click", handleBackdropClick);
 }
 
 editProfileBtn.addEventListener("click", function () {
+  toggleButtonState(
+    [editProfileNameInput, editProfileDescriptionInput],
+    editProfileBtn.querySelector("button[type='submit']")
+  );
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
@@ -126,12 +130,14 @@ newPostForm.addEventListener("submit", function (evt) {
     link: newPostImageInput.value,
   };
   newPostForm.reset();
-  toggleButtonState(
-    [newPostDescriptionInput, newPostImageInput],
-    newPostForm.querySelector("button[type='submit']")
-  );
-  hideInputError(newPostForm, newPostDescriptionInput);
-  hideInputError(newPostForm, newPostImageInput);
+
+  const inputList = [newPostDescriptionInput, newPostImageInput];
+  const submitButton = newPostForm.querySelector("button[type='submit']");
+
+  toggleButtonState(inputList, submitButton, settings);
+  hideInputError(inputList, submitButton, settings);
+  hideInputError(newPostForm, newPostImageInput, settings);
+
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
