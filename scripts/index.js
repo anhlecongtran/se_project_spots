@@ -23,9 +23,6 @@ const newPostDescriptionInput = newPostModal.querySelector(
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
-const newPostImageEl = document.querySelector(".card__image");
-const newPostDescriptionEl = document.querySelector(".card__title");
-
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-button");
 const previewImageEl = previewModal.querySelector(".modal__image");
@@ -67,18 +64,33 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    closeModal(document.querySelector(".modal_is-opened"));
+  }
+}
+
+function handleBackdropClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.target);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
+  modal.addEventListener("click", handleBackdropClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListenerEventListener("keydown", handleEscapeKey);
+  modal.removeEventListener("click", handleBackdropClick);
 }
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  // resetValidation(formElement, inputElement, input);
   openModal(editProfileModal);
 });
 
@@ -87,7 +99,6 @@ editProfileCloseBtn.addEventListener("click", function () {
 });
 
 newPostBtn.addEventListener("click", function () {
-  // resetValidation();
   openModal(newPostModal);
 });
 
@@ -115,6 +126,12 @@ newPostForm.addEventListener("submit", function (evt) {
     link: newPostImageInput.value,
   };
   newPostForm.reset();
+  toggleButtonState(
+    [newPostDescriptionInput, newPostImageInput],
+    newPostForm.querySelector("button[type='submit']")
+  );
+  hideInputError(newPostForm, newPostDescriptionInput);
+  hideInputError(newPostForm, newPostImageInput);
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(newPostModal);
