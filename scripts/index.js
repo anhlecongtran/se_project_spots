@@ -91,7 +91,8 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   toggleButtonState(
     [editProfileNameInput, editProfileDescriptionInput],
-    editProfileBtn.querySelector("button[type='submit']")
+    editProfileForm.querySelector("button[type='submit']"),
+    settings
   );
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
@@ -135,8 +136,9 @@ newPostForm.addEventListener("submit", function (evt) {
   const submitButton = newPostForm.querySelector("button[type='submit']");
 
   toggleButtonState(inputList, submitButton, settings);
-  hideInputError(inputList, submitButton, settings);
-  hideInputError(newPostForm, newPostImageInput, settings);
+  inputList.forEach((inputElement) => {
+    hideInputError(newPostForm, inputElement, settings);
+  });
 
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
