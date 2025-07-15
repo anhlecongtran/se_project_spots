@@ -150,6 +150,7 @@
 
 .modal__submit-button-type-disabled {
   background: rgba(33, 33, 33, 1);
+  opacity: 50%;
 }
 
 .modal__submit-button:hover {

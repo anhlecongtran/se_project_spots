@@ -100,6 +100,10 @@ editProfileBtn.addEventListener("click", function () {
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
+  const inputList = [editProfileNameInput, editProfileDescriptionInput];
+  inputList.forEach((inputElement) => {
+    hideInputError(editProfileForm, inputElement, settings);
+  });
   closeModal(editProfileModal);
 });
 
